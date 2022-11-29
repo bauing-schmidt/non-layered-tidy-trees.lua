@@ -3,7 +3,7 @@ try {
 	node('windows-slave-2') {
 		try {
 			checkout scm
-			copyArtifacts filter: 'libnonlayeredtidytrees.zip', projectName: '/tidyTrees/master'
+			copyArtifacts filter: 'libnonlayeredtidytrees.zip', projectName: 'tidyTrees/master'
 bat '''
 
 wget https://github.com/bauing-schmidt/lua-windows/archive/refs/tags/v5.4.4.zip
@@ -21,7 +21,7 @@ cd ..
 mkdir -p local\\share\\lua\\5.4
 mkdir -p local\\lib\\lua\\5.4
 cp src\\liblua-non-layered-tidy-trees.lua local\\share\\lua\\5.4\\
-cp src\\libluanonlayeredtidytrees.dll local\\lib\\lua\\5.4\\
+mv src\\libluanonlayeredtidytrees.dll local\\lib\\lua\\5.4\\
 
 zip -r libluanonlayeredtidytrees.zip local
 '''
