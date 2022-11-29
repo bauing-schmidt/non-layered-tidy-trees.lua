@@ -21,12 +21,12 @@ cd ..
 mkdir -p local\\share\\lua\\5.4
 mkdir -p local\\lib\\lua\\5.4
 cp src\\liblua-non-layered-tidy-trees.lua local\\share\lua\\5.4\\
-cp src\\libluanonlayeredtidytrees.dll local\\lib\lua\\5.4\\
+cp src\\libluanonlayeredtidytrees.dll local\\lib\\lua\\5.4\\
 
 zip -r libluanonlayeredtidytrees.zip local
 '''
 		} finally {
-			archiveArtifacts artifacts: 'src/libluanonlayeredtidytrees.zip'
+			archiveArtifacts artifacts: 'libluanonlayeredtidytrees.zip'
 			cleanWs()
 		}
 	}
