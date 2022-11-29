@@ -1,5 +1,6 @@
 
 try {
+	properties([disableConcurrentBuilds(), copyArtifactPermission('/tidyTrees/*')])
 	node('windows-slave-2') {
 		try {
 			checkout scm
